@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  mongo:
+    image: "mongo"
+    container_name: mongo
+    environment:
+      - "MONGO_INITDB_ROOT_PASSWORD=1234567"
+      - "MONGO_INITDB_ROOT_USERNAME=mongo"
+    ports:
+      - "27017:27017"
+    networks:
+      - db
+
+networks:
+  db:
+    name: db_networks

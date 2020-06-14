@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  mariadb:
+    image: "mariadb/server:10.3"
+    container_name: mariadb
+    environment:
+      - "MYSQL_ROOT_PASSWORD=1234567"
+    ports:
+      - "3306:3306"
+    networks:
+      - db
+    command: --lower_case_table_names=1
+
+networks:
+  db:
+    name: db_networks

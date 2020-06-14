@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  postgres:
+    image: "postgres"
+    container_name: postgres
+    environment:
+      - "POSTGRES_PASSWORD=1234567"
+      - "POSTGRES_USER=postgres"
+    ports:
+      - "5432:5432"
+    networks:
+      - db
+
+networks:
+  db:
+    name: db_networks
