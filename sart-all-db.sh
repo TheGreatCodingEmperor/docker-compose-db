@@ -1,0 +1,1 @@
+docker-compose -f mariadb-compose -f mongo-compose -f postGre-compose up

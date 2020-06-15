@@ -1,0 +1,20 @@
+version: "3.5"
+
+services:
+  oracle:
+    image: "wnameless/oracle-xe-11g-r2"
+    container_name: oracle
+    environment:
+      - ORACLE_SID=ORCLCDB
+      - ORACLE_PDB=ORCLPDB1
+      - ORACLE_PWD=1234567
+      - ORACLE_CHARACTERSET=UTF8MB4
+    ports:
+      - 1521:1521
+      - 5500:5500
+    networks:
+      - db
+
+networks:
+  db:
+    name: db_networks
